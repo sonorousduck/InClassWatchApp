@@ -4,21 +4,26 @@ import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatTextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextView;
+    private long count = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AppCompatButton myButton = findViewById(R.id.my_button);
-        AppCompatButton myButton2 = findViewById(R.id.my_button_2);
+        AppCompatButton plus_button = findViewById(R.id.plus_button);
+        AppCompatButton minus_button = findViewById(R.id.minus_button);
+
 
 // You could do this.
 
@@ -30,16 +35,19 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
 
-        myButton.setOnClickListener((view -> {
-                Log.d("BUTTON", "My button was pressed");
+        plus_button.setOnClickListener((view -> {
+            count++;
+            AppCompatTextView textView = findViewById(R.id.message);
+            textView.setText("" + count);
         }));
 
-        myButton2.setOnClickListener((view -> {
-            Log.d("BUTTON2", "Second button was pressed");
+        minus_button.setOnClickListener((view -> {
+            count--;
+            AppCompatTextView textView = findViewById(R.id.message);
+            textView.setText("" + count);
+
         }));
 
-
-        mTextView = findViewById(R.id.text);
 
     }
 

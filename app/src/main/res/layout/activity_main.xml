@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_width="match_parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Hello World!"
-    />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <LinearLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Press me!"
-        android:id="@+id/my_button"
-        />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:boxedEdges="all"
+        tools:ignore="MissingPrefix">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Press me 2!"
-        android:id="@+id/my_button_2"
-        />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="40dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/minus_button"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="-" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/plus_button"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:text="+" />
 
 
+        </LinearLayout>
 
 
-</LinearLayout>
+    </LinearLayout>
+</androidx.wear.widget.BoxInsetLayout>
